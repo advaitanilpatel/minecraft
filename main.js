@@ -32,3 +32,61 @@ function new_image(get_image){
         canvas.add(block_object);
     });
 }
+window.addEventListener("keydown",my_keydown);
+function my_keydown(e){
+    console.log(e);
+    keypressed=e.keyCode;
+    console.log(keypressed);
+
+    if (keypressed=='84'){
+        new_image('trunk.jpg');
+    }
+    if (keypressed=='68'){
+        new_image('dark_green.png');
+    }
+    if (keypressed=='76'){
+        new_image('light_green.png');
+    }
+    if (keypressed=='71'){
+        new_image('ground.png');
+    }
+    if (keypressed=='87'){
+        new_image('wall.jpg');
+    }
+    if (keypressed=='89'){
+        new_image('yellow_wall.png');
+    }
+    if (keypressed=='82'){
+        new_image('roof.png');
+    }
+    if (keypressed=='67'){
+        new_image('cloud.jpg');
+    }
+    if (keypressed=='85'){
+        new_image('unique.png');
+    }
+    if (keypressed=='38'){
+        up();
+    }
+    if (keypressed=='40'){
+        down();
+    }
+    if (keypressed=='37'){
+        left();
+    } 
+    if (keypressed=='39'){
+        right();
+    }
+    if (e.shiftKey && keypressed=='80'){
+        block_img_width=block_img_width+10;
+        block_img_height=block_img_height+10;
+        document.getElementById("currentWidth").innerHTML=block_img_width;
+        document.getElementById("currentHeight").innerHTML=block_img_height;
+    }
+    if(e.shiftKey && keypressed=='77'){
+        block_img_height=block_img_height-10;
+        block_img_width=block_img_width-10;
+        document.getElementById("currentHeight").innerHTML=block_img_height;
+        document.getElementById("currentWidth").innerHTML=block_img_width;
+    }
+}
